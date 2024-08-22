@@ -1,4 +1,4 @@
--- Siirryt‰‰n varmuuden vuoksi MASTER-tietokantaan
+-- Siirryt√§√§n varmuuden vuoksi MASTER-tietokantaan
 USE master
 GO
 
@@ -95,7 +95,7 @@ CREATE TABLE Laitetyyppi (
                 CONSTRAINT Laitetyyppi_pk PRIMARY KEY (Laitetyyppi)
 )
 
--- Comment for table [Laitetyyppi]: Mink‰ tyyppinen laite tai tarvike. Luokittelua varten
+-- Comment for table [Laitetyyppi]: Mink√§ tyyppinen laite tai tarvike. Luokittelua varten
 
 -- Comment for column [Laitetyyppi]: Laitetyypin nimitys, esim videokamera, kaapeli tms.
 
@@ -110,11 +110,11 @@ CREATE TABLE Lainaaja (
                 CONSTRAINT Lainaaja_pk PRIMARY KEY (LainaajaID)
 )
 
--- Comment for table [Lainaaja]: Lainaajan henkilˆtiedot
+-- Comment for table [Lainaaja]: Lainaajan henkil√∂tiedot
 
--- Comment for column [LainaajaID]: Oppilasnumero tai henkilˆkunnan s‰hkˆpostiosoite
+-- Comment for column [LainaajaID]: Oppilasnumero tai henkil√∂kunnan s√§hk√∂postiosoite
 
--- Comment for column [Ryhm‰]: Luokka tai osasto, johon lainaaja kuuluu
+-- Comment for column [Ryhm√§]: Luokka tai osasto, johon lainaaja kuuluu
 
 
 CREATE TABLE Laite (
@@ -135,7 +135,7 @@ CREATE TABLE Laite (
 
 
 CREATE TABLE Varaus (
-                VarausID INT NOT NULL,
+                VarausID INT IDENTITY NOT NULL,
                 LainaajaID VARCHAR(50) NOT NULL,
                 LaiteID INT NOT NULL,
                 Alkaa DATETIME NOT NULL,
@@ -152,7 +152,7 @@ CREATE TABLE Lainaus (
                 CONSTRAINT Lainaus_pk PRIMARY KEY (LainausID)
 )
 
--- M‰‰ritell‰‰n taulujen v‰liset relaatiot perus-viiteavain pareina
+-- M√§√§ritell√§√§n taulujen v√§liset relaatiot perus-viiteavain pareina
 
 ALTER TABLE Laite ADD CONSTRAINT Laitetyyppi_Laite_fk
 FOREIGN KEY (Laitetyyppi)
